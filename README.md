@@ -1,1 +1,1 @@
-# java-microservices
+# Java Course Erudio
