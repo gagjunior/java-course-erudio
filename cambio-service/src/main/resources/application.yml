@@ -3,3 +3,18 @@ server:
 spring:
   application:
     name: cambio-service
+  datasource:
+    url: jdbc:mysql://192.168.200.52:3306/cambio_service?useTimezone=true&serverTimezone=UTC
+    username: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  flyway:
+    url: jdbc:mysql://192.168.200.52:3306/
+    schemas: cambio_service
+    user: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
+
+
+  
