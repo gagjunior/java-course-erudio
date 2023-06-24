@@ -7,6 +7,10 @@ spring:
     url: ${DATASOURCE_URL}/book_service?useTimezone=true&serverTimezone=UTC
     username: ${DATASOURCE_USERNAME}
     password: ${DATASOURCE_PASSWORD}
+  jackson:
+    default-property-inclusion: NON_NULL
+    serialization:
+      fail-on-empty-beans: false            
   jpa:
     hibernate:
       ddl-auto: update
