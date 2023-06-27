@@ -1,0 +1,13 @@
+server:
+  port: 8761
+  
+# Spring
+spring:
+  application:
+    name: naming-server
+    
+# Euureka
+eureka:
+  client:
+    register-with-eureka: false #remover em produção
+    fetch-registry: false #remover em produção
