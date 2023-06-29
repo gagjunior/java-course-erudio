@@ -1,23 +1,20 @@
 package com.example.gateway.configuration;
 
-import java.util.function.Function;
-
-import org.springframework.cloud.gateway.route.Route;
 import org.springframework.cloud.gateway.route.RouteLocator;
-import org.springframework.cloud.gateway.route.builder.Buildable;
-import org.springframework.cloud.gateway.route.builder.PredicateSpec;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ApiGateWayConfiguration {
-	
+
 	@Bean
 	public RouteLocator gatewayRouter(RouteLocatorBuilder builder) {
-		Function<PredicateSpec, Buildable<Route>> function = p -> p.path("/get").uri("http://httpbin.org:80");
-		
-		return builder.routes().route(function).build();		
+		return builder.routes()
+				.route(p -> p.path("/get").uri("http://httpbin.org:80"))
+				.route(p -> p.path("/cambio-service/**").uri("lb://cambio-service"))
+				.route(p -> p.path("/book-service/**").uri("lb://book-service"))
+				.build();
 	}
 
 }
