@@ -11,7 +11,10 @@ import br.com.gagjunior.book.models.Book;
 import br.com.gagjunior.book.proxy.CambioProxy;
 import br.com.gagjunior.book.response.Cambio;
 import br.com.gagjunior.book.services.BookService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "Book endpoint")
 @RestController
 @RequestMapping("book-service")
 public class BookController {
@@ -25,6 +28,7 @@ public class BookController {
 	@Autowired
 	private CambioProxy cambioProxy;
 
+	@Operation(summary = "Find book by ID")
 	@GetMapping(value = "/{id}/{currency}")
 	public Book findBook(@PathVariable("id") Long id, @PathVariable("currency") String currency) {
 
