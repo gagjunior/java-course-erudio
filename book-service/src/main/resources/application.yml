@@ -1,5 +1,6 @@
 server:
   port: 8100
+  
 #Spring
 spring:
   application:
@@ -20,6 +21,12 @@ spring:
     schemas: book_service
     user: ${DATASOURCE_USERNAME}
     password: ${DATASOURCE_PASSWORD}
+    
+#Spring Docs
+springdoc:
+  show-actuator: true
+  api-docs:
+    path: book-service/v3/api-docs
     
 #Eureka
 eureka:

@@ -24,6 +24,12 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
       
+#Spring Docs
+springdoc:
+  show-actuator: true
+  api-docs:
+    path: cambio-service/v3/api-docs
+      
 #Resilience4j
 resilience4j:
   retry:
