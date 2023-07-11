@@ -17,8 +17,7 @@ spring:
     hibernate:
       ddl-auto: update
   flyway:
-    url: ${DATASOURCE_URL}/
-    schemas: book_service
+    url: ${DATASOURCE_URL}/book_service?useTimezone=true&serverTimezone=UTC
     user: ${DATASOURCE_USERNAME}
     password: ${DATASOURCE_PASSWORD}
     

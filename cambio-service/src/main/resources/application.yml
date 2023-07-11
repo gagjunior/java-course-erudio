@@ -10,11 +10,14 @@ spring:
     username: ${DATASOURCE_USERNAME}
     password: ${DATASOURCE_PASSWORD}
   jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect 
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
   flyway:
-    url: ${DATASOURCE_URL}/
-    schemas: cambio_service
+    url: ${DATASOURCE_URL}/cambio_service?useTimezone=true&serverTimezone=UTC
     user: ${DATASOURCE_USERNAME}
     password: ${DATASOURCE_PASSWORD}
     
