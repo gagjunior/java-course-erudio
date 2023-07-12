@@ -13,6 +13,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USER_NAME }} 
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.4.4
+        with:
+          java-version: 17
+          
         
       
       
