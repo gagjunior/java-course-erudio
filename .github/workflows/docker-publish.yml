@@ -1,0 +1,19 @@
+name: CI with Git Hub
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Docker Login
+        uses: docker/login-action@v2.2.0
+        with:
+          username: ${{ secretes.DOCKER_USER_NAME }} 
+          password: ${{ secretes.DOCKER_PASSWORD }}
+        
+      
+      
+     
